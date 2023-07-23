@@ -9,35 +9,73 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <!-- Add this in the head section of index.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+   
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <title>My Portfolio</title>
+    
+    <style>
+      /* Style for the Dark Mode button */
+      button.dark-mode-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999; /* Set a high z-index to make the button appear on top of other content */
+        padding: 5px;
+        border: none;
+        border-radius: 50%;
+        background-color: #000000;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      button.dark-mode-button:hover {
+        background-color: #ff0707;
+      }
+    </style>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <button class="dark-mode-button" onclick="toggleDarkMode()">
+      <i class="toggle-icon fas"></i>
+    </button>
+    
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <script>
+      const toggleDarkMode = () => {
+        const body = document.body;
+        const isDarkMode = body.classList.toggle('dark-mode');
+    
+        // Update the button's icon based on the current mode
+        const toggleIcon = document.querySelector('.toggle-icon');
+        toggleIcon.classList.remove(isDarkMode ? 'fa-sun' : 'fa-moon'); // Remove the opposite icon class
+        toggleIcon.classList.add(isDarkMode ? 'fa-moon' : 'fa-sun'); // Add the appropriate icon class
+    
+        // Save the user's preference in localStorage
+        localStorage.setItem('darkMode', isDarkMode);
+      };
+    
+      // Check if dark mode preference is stored in localStorage
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+      // Set the initial mode based on the user's preference
+      const body = document.body;
+      body.classList.toggle('dark-mode', isDarkMode);
+    
+      // Set the initial icon based on the user's preference
+      const toggleIcon = document.querySelector('.toggle-icon');
+      toggleIcon.classList.add(isDarkMode ? 'fa-moon' : 'fa-sun'); // Add the appropriate initial icon class
+    </script>
+    
   </body>
 </html>

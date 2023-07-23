@@ -1,0 +1,122 @@
+.container-fluid.home-container {
+  background-image: linear-gradient(to right, #07adf5, #292929);
+  /* Other styles as before */
+  position: relative; /* To make the LED effect relative to this container */
+  overflow: hidden; /* To hide any overflowing content */
+}
+
+.container.home-content {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(255, 10, 226, 0.5);
+  animation: flickerAnimation 4s infinite;
+}
+
+/* Define the flicker animation */
+@keyframes flickerAnimation {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    transform: translate(0.15em, 0.15em);
+  }
+}
+
+.home-btn {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 18px 32px; /* Increase padding to make the button thicker */
+  border: none;
+  border-radius: 8px; /* Increase border-radius for a rounder look */
+  font-size: 20px; /* Increase font size for a larger text */
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  background-color: #fad400; /* Set default button background color */
+  box-shadow: 0 0 10px rgba(242, 255, 0, 0.5); /* Add a subtle shadow */
+  transition: all 0.3s ease; /* Add smooth transition on hover */
+}
+
+/* Style the buttons on hover */
+.btn:hover {
+  background-color: #ff0095; /* Change the background color on hover */
+  box-shadow: 0 0 15px rgba(255, 0, 43, 0.7); /* Enhance the shadow on hover */
+}
+
+/* LED effect */
+.container-fluid.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0.1) 20%, rgba(255, 0, 0, 0.2) 50%, rgba(255, 0, 0, 0.1) 80%, rgba(255, 0, 0, 0) 100%);
+  animation: ledAnimation 2s linear infinite;
+  opacity: 0.8;
+}
+
+/* Define the LED animation */
+@keyframes ledAnimation {
+  from {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  to {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
+
+
+.dark-mode h1{
+  color: orangered;
+}
+
+.dark-mode h2{
+  color: greenyellow
+}
+
+.dark-mode .btn-hire{
+  background: linear-gradient(to bottom, #179351, #A52A2A);
+ 
+}
+
+.dark-mode .btn-cv{
+  background: linear-gradient(to bottom, #1a0033, #46006b, #7300a3, #a000d2, #d400ff);
+  margin-left: 5px;
+}
+
+.dark-mode .container-fluid.home-container{
+  background: black;
+}
+
+
+.dark-mode.container-fluid.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: rgb(241, 241, 0);
+  animation: ledAnimation 4s linear infinite;
+  opacity: 1;
+}
+
+/* Define the LED animation */
+@keyframes ledAnimation {
+  from {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  to {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}

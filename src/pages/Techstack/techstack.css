@@ -1,0 +1,125 @@
+/* Light mode styles */
+.tech-stack-container {
+  background-color: #f9f9f9;
+  padding: 40px;
+  margin-top: 20px;
+  color: #000; /* Default text color for light mode */
+}
+
+.tech-stack-heading {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tech-stack-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tech-stack-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* To position the LED effect relative to the icon */
+  overflow: hidden; /* To hide any overflowing box-shadow */
+}
+
+/* LED effect */
+.tech-stack-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(5, 157, 239, 0.1),
+    rgba(255, 0, 0, 0.2) 50%,
+    rgba(2, 245, 96, 0.1)
+  );
+  border-radius: 8px;
+  animation: ledAnimation 1.5s linear infinite;
+}
+
+/* Define the LED animation */
+@keyframes ledAnimation {
+  0% {
+    box-shadow: 0 0 10px 2px #ff001a;
+  }
+  50% {
+    box-shadow: 0 0 20px 5px #ff001a, 0 0 40px 10px #ff001a;
+  }
+  100% {
+    box-shadow: 0 0 10px 2px #ff001a;
+  }
+}
+
+.tech-stack-icon svg {
+  font-size: 36px;
+  color: #007bff; /* Replace this with your desired icon color */
+  margin-bottom: 10px;
+}
+
+.tech-stack-icon p {
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Hover effect */
+.tech-stack-icon:hover svg {
+  color: #ff007f; /* Change the color on hover */
+  animation: none; /* Disable the LED animation on hover */
+}
+
+/* Dark mode styles */
+.dark-mode .tech-stack-container {
+  background-color: #000000;
+  color: #fff; /* Text color for dark mode */
+}
+
+.dark-mode .tech-stack-heading {
+  color: #fbea01; /* Text color for dark mode */
+}
+
+.dark-mode .tech-stack-icon {
+  background-color: #19b4b4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .tech-stack-icon::before {
+  background: linear-gradient(
+    45deg,
+    rgba(50, 50, 50, 0.2),
+    rgba(100, 100, 100, 0.3) 50%,
+    rgba(30, 30, 30, 0.2)
+  );
+}
+
+.dark-mode .tech-stack-icon svg {
+  color: #3e00f9; /* Icon color for dark mode */
+}
+
+.dark-mode .tech-stack-icon:hover svg {
+  color: #f1007c; /* Change the color on hover for dark mode */
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .tech-stack-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tech-stack-icon {
+    margin: 10px 0;
+  }
+}

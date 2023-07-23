@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'
 
-function App() {
+import Layout from './components/Layout/Layout';
+
+
+import ScrollToTop from "react-scroll-to-top"
+// import Footer from './Footer/Footer';
+
+
+
+const App = () => {
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+      <Layout />
+  
+
+      <div className='container'>
+      
+      </div>
+    
+      <ScrollToTop smooth color='yellow'style={{backgroundColor:'#1e1e2c',borderRadius:'80px'}} />
+      </>
+     
+     
+     
+        
   );
-}
+};
 
 export default App;

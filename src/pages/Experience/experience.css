@@ -1,0 +1,119 @@
+/* Experience Component Styling */
+
+.experience-container {
+    background-color: #fcfcfc;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    color: #f7f7f7;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .experience-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    animation: moonOrbit 25s linear infinite;
+  }
+  
+  .experience-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparentpng.com/thumb/star-png/tiSAC7-star-png-image.png') repeat;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .experience-heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0c0c0c;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .experience-item {
+    padding-left: 40px;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #07adf5;
+  }
+  
+  .experience-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .experience-position {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  .experience-duration {
+    background-color: #07adf5;
+    padding: 6px 12px;
+    border-radius: 30px;
+    color: #020202;
+    font-size: 14px;
+  }
+  
+  @keyframes moonOrbit {
+    0% {
+      transform: translateX(0) rotate(0);
+    }
+    100% {
+      transform: translateX(300px) rotate(360deg);
+    }
+  }
+  
+.dark-mode .experience-container{
+  background-color: black;
+  
+}
+
+.dark-mode .experience-heading{
+  background-color: orangered;
+  color: white;
+}
+
+.dark-mode .experience-duration{
+  background-color: coral;
+  color: white;
+}
+.dark-mode .experience-title{
+  color: white;
+}
+.dark-mode .experience-position{
+  color: white;
+}
+.dark-mode .experience-duration{
+  color: white;
+}
+
+.dark-mode .experience-item::before {
+  background-color: orange;
+}
+  

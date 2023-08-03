@@ -52,6 +52,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
 }
 
 .project-button:hover {
@@ -138,6 +139,7 @@
 .project-card {
   background-color: #f9f9f9;
   color: #333;
+  
 }
 
 /* For dark mode */
@@ -148,6 +150,7 @@
 }
 .dark-mode .project-button:hover {
   background-color: rgb(255, 109, 4);
+  text-decoration: none;
 }
 .dark-mode .project-card h2{
   color:tomato ;

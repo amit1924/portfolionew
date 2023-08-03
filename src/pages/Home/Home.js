@@ -1,14 +1,14 @@
 import React from 'react';
 import './home.css';
 import Typewriter from 'typewriter-effect';
-import ResumeFile from './Resume.pdf'; // Replace with the actual file path of your resume
+import ResumeFile from './My Cv.pdf'; // Replace with the actual file path of your resume
 
 const Home = () => {
   const handleDownloadResume = () => {
     // Programmatically create a link and click it to trigger the download
     const link = document.createElement('a');
     link.href = ResumeFile;
-    link.download = 'Resume.pdf'; // Set the name of the downloaded file
+    link.download = 'My Cv.pdf'; // Set the name of the downloaded file
     link.click();
   };
 

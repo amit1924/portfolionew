@@ -1,0 +1,162 @@
+/* Light mode styles */
+.project {
+  text-align: center;
+  margin-top: 18px;
+  background-color: #f9f9f9; /* Light mode background color */
+  color: #333; /* Default text color */
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.project-card {
+  width: calc(33.33% - 20px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Beautiful shadow effect */
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #292929;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.project-card .project-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  font-family: 'Roboto', sans-serif;
+}
+
+.project-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #07adf5;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+.project-button:hover {
+  background-color: #292929;
+}
+
+/* Cover project card with image */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.8;
+  background: linear-gradient(135deg, #f368e0, #00d2ff);
+  transform: rotate(0deg) translate(-50%, -50%);
+  animation: ledAnimation 2s linear infinite;
+}
+
+.project-card:nth-child(1)::before {
+  background-image: url('https://www.altamira.ai/wp-content/uploads/2022/12/Full-Stack-DeveloperArtboard-2.png');
+}
+
+.project-card:nth-child(2)::before {
+  background-image: url('https://www.altamira.ai/wp-content/uploads/2022/12/Full-Stack-DeveloperArtboard-2.png');
+}
+
+.project-card:nth-child(3)::before {
+  background-image: url('https://www.altamira.ai/wp-content/uploads/2022/12/Full-Stack-DeveloperArtboard-2.png');
+}
+
+.project-card:nth-child(4)::before {
+  background-image: url('https://www.altamira.ai/wp-content/uploads/2022/12/Full-Stack-DeveloperArtboard-2.png');
+}
+
+.project-card:nth-child(5)::before {
+  background-image: url('https://www.altamira.ai/wp-content/uploads/2022/12/Full-Stack-DeveloperArtboard-2.png');
+}
+
+.project-card:nth-child(6)::before {
+  background-image: url('https://www.altamira.ai/wp-content/uploads/2022/12/Full-Stack-DeveloperArtboard-2.png');
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .project-card {
+    width: 100%;
+  }
+}
+
+/* Define the LED animation */
+@keyframes ledAnimation {
+  from {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  to {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}
+
+/* Dark mode styles */
+.project.dark-mode {
+  background-color: #333; /* Dark mode background color */
+  color: #fff; /* Dark mode text color */
+}
+
+.project.dark-mode .project-card {
+  background-color: #333; /* Dark mode background color for project cards */
+  color: #fff; /* Dark mode text color for project cards */
+}
+
+.project.dark-mode .project-card::before {
+  /* Add styles for the project card background in dark mode */
+  background: linear-gradient(135deg, #5d13e7, #16c79a);
+}
+
+/* Add more styles specific to dark mode if needed */
+
+/* For light mode */
+.project-card {
+  background-color: #f9f9f9;
+  color: #333;
+  
+}
+
+/* For dark mode */
+.dark-mode .project-card {
+  background-color: #000000;
+  color: #f6f6f6;
+  font-size: 20px;
+}
+.dark-mode .project-button:hover {
+  background-color: rgb(255, 109, 4);
+  text-decoration: none;
+}
+.dark-mode .project-card h2{
+  color:tomato ;
+}
+
+.dark-mode .project{
+  background-color: black;
+  color: white;
+}

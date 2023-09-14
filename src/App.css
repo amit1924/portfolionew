@@ -1,0 +1,26 @@
+ :root {
+    --primary-bg-color: #f9f9f9; 
+    --secondary-bg-color: #fdfdfd; 
+    --text-color: #ff3333; 
+    --text-color-light: #ffffff; 
+    --text-color-dark: #ddd; 
+   
+  } 
+
+   .dark-mode {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color-light);
+  
+  } 
+
+  /* dark-mode.css */
+
+/* Add dark mode styles for your entire app here */
+body.dark-mode {
+    background: linear-gradient(135deg, #2e1437, #8c2671);
+    color: #ffffff;
+  }
+  
+  /* Customize styles for specific components in dark mode */
+  
+  

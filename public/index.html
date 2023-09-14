@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <!-- Add this in the head section of index.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+   
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <title>My Portfolio</title>
+    
+    <style>
+      /* Style for the Dark Mode button */
+      button.dark-mode-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999; /* Set a high z-index to make the button appear on top of other content */
+        padding: 5px;
+        border: none;
+        border-radius: 50%;
+        background-color: #000000;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      button.dark-mode-button:hover {
+        background-color: #ff0707;
+      }
+    </style>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <button class="dark-mode-button" onclick="toggleDarkMode()">
+      <i class="toggle-icon fas"></i>
+    </button>
+    
+
+    <script>
+      const toggleDarkMode = () => {
+        const body = document.body;
+        const isDarkMode = body.classList.toggle('dark-mode');
+    
+        // Update the button's icon based on the current mode
+        const toggleIcon = document.querySelector('.toggle-icon');
+        toggleIcon.classList.remove(isDarkMode ? 'fa-sun' : 'fa-moon'); // Remove the opposite icon class
+        toggleIcon.classList.add(isDarkMode ? 'fa-moon' : 'fa-sun'); // Add the appropriate icon class
+    
+        // Save the user's preference in localStorage
+        localStorage.setItem('darkMode', isDarkMode);
+      };
+    
+      // Check if dark mode preference is stored in localStorage
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+      // Set the initial mode based on the user's preference
+      const body = document.body;
+      body.classList.toggle('dark-mode', isDarkMode);
+    
+      // Set the initial icon based on the user's preference
+      const toggleIcon = document.querySelector('.toggle-icon');
+      toggleIcon.classList.add(isDarkMode ? 'fa-moon' : 'fa-sun'); // Add the appropriate initial icon class
+    </script>
+    
+  </body>
+</html>

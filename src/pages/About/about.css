@@ -1,0 +1,62 @@
+/* Light mode styles */
+.about-container {
+  background-color: #f9f9f9;
+  padding: 40px;
+  margin-top: 20px;
+  color: #000; /* Default text color for light mode */
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url('./dd.jpg'); /* Replace 'path-to-your-profile-image.jpg' with the actual image path */
+  background-size: cover;
+  background-position: center;
+  /* You can add additional styles for the image */
+}
+
+.about-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.about-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-description {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Dark mode styles */
+.dark-mode .about-container {
+  background-color: #000000;
+  color: #fff; /* Text color for dark mode */
+}
+
+.dark-mode .about-heading,
+.dark-mode .about-description {
+  color: #fff; /* Text color for dark mode */
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image {
+    margin-bottom: 20px;
+  }
+}

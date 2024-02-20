@@ -1,13 +1,13 @@
-import React from 'react';
-import './contact.css';
-import { useState } from 'react';
+import React from "react";
+import "./contact.css";
+import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    contactNo: '',
-    message: '',
+    name: "",
+    email: "",
+    contactNo: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -17,35 +17,36 @@ const Contact = () => {
       [name]: value,
     }));
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:5000/api/contact', {
-      method: 'POST',
+    fetch("http://localhost:5000/api/contact", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((data) => {
-        console.log(data);
-        // Handle any UI updates or notifications for successful form submission
-        
-        // Reset the form fields after successful form submission
-        setFormData({
-          name: '',
-          email: '',
-          contactNo: '',
-          message: '',
-        });
+        console.log("Server response:", data); // Log the server response for debugging
+        if (data && data.success) {
+          alert("Data saved successfully");
+        } else {
+          throw new Error("Data not saved successfully");
+        }
       })
       .catch((error) => {
-        console.error('Error submitting form:', error);
-        // Handle any UI updates or notifications for form submission error
+        console.error("Error submitting form:", error);
+        alert(
+          "An error occurred while submitting the form. Please try again later."
+        );
       });
   };
-  
 
   return (
     <div className="contact-container" id="ct">
@@ -57,7 +58,8 @@ const Contact = () => {
         <div className="wave"></div>
       </div>
       <p className="contact-info">
-        For any inquiries or questions, please fill out the form below or contact me at amit192400@gmail.com.
+        For any inquiries or questions, please fill out the form below or
+        contact me at amit192400@gmail.com.
       </p>
       {/* Contact Form */}
       <div className="contact-form">
@@ -115,43 +117,75 @@ const Contact = () => {
         <h3>Connect with us:</h3>
         <ul className="social-icons">
           <li>
-            <a href="https://web.whatsapp.com//+918340616588" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://web.whatsapp.com//+918340616588"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-whatsapp"></i>
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/amit1924" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/amit1924"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-linkedin"></i>
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/your-facebook-profile" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.facebook.com/your-facebook-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://twitter.com/your-twitter-handle"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/your-instagram-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-instagram"></i>
             </a>
           </li>
           {/* Add other social media links and icons here */}
           <li>
-            <a href="https://www.youtube.com/your-youtube-channel" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.youtube.com/your-youtube-channel"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-youtube"></i>
             </a>
           </li>
           <li>
-            <a href="https://www.pinterest.com/your-pinterest-profile" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.pinterest.com/your-pinterest-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-pinterest"></i>
             </a>
           </li>
           <li>
-            <a href="https://github.com/amit1924" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/amit1924"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i className="fab fa-github"></i>
             </a>
           </li>
